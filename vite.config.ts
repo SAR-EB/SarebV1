@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   // Base path para GitHub Pages - ajuste "seu-repositorio" para o nome do seu repo
-  base: './',
+  base: '/SarebV1/',
   
   plugins: [
     // The React and Tailwind plugins are both required for Make, even if
