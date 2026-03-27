@@ -1,134 +1,221 @@
-# SAR-EB – Sistema de Apoio a Requisições do Exército Brasileiro
+# SAR-EB – Sistema Automatizado de Requisições do Exército Brasileiro
 
-Sistema completo de gerenciamento de requisições, checklists e certidões para o Exército Brasileiro.
+[![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-success)](https://github.com)
+[![React](https://img.shields.io/badge/React-18.3.1-blue)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![Tailwind](https://img.shields.io/badge/Tailwind-4.0-38bdf8)](https://tailwindcss.com/)
 
-## 🎯 Funcionalidades
+Sistema completo de gerenciamento de requisições, checklists e certidões para o Exército Brasileiro com design institucional e interface totalmente responsiva.
 
-### 🔐 Autenticação
-- **Login** - Acesso ao sistema com credenciais
-- **Cadastro** - Registro de novos usuários
-- **Recuperação de senha** - Sistema de recuperação por e-mail
+## 🚀 Deploy Rápido
 
-### 📊 Dashboard
-- Visão geral do sistema
-- Estatísticas de requisições, checklists e certidões
-- Atalhos rápidos para ações principais
-- Requisições recentes
-- Avisos importantes
+```bash
+# 1. Clonar/preparar o projeto
+git init && git add . && git commit -m "Deploy inicial"
+
+# 2. Enviar para GitHub
+git remote add origin https://github.com/SEU-USUARIO/SEU-REPO.git
+git push -u origin main
+
+# 3. Configurar GitHub Pages
+# Settings > Pages > Source: GitHub Actions
+
+# 4. Aguardar 2-3 minutos ✨
+# Seu site estará em: https://SEU-USUARIO.github.io/SEU-REPO/
+```
+
+📖 **Guias Detalhados:**
+- 📘 [QUICK_START.md](QUICK_START.md) - Início rápido em 3 passos
+- 📗 [PASSO_A_PASSO.md](PASSO_A_PASSO.md) - Guia visual completo
+- 📙 [DEPLOY_GITHUB_PAGES.md](DEPLOY_GITHUB_PAGES.md) - Documentação técnica
+- 📕 [CHECKLIST_DEPLOY.md](CHECKLIST_DEPLOY.md) - Checklist de verificação
+
+## 🎯 Funcionalidades Principais
+
+### 🔐 Autenticação Completa
+- ✅ Login com validação de credenciais
+- ✅ Cadastro de novos usuários com seleção de perfil
+- ✅ Recuperação de senha por e-mail
+- ✅ 3 perfis: Requisitante, SALC (Aprovador), Fiscal Administrativo
+
+### 📊 Dashboard Inteligente
+- Visão geral com estatísticas em tempo real
+- Cards informativos (requisições, checklists, certidões, usuários)
+- Gráficos de status e desempenho
+- Requisições recentes com ações rápidas
+- Avisos importantes do sistema
 
 ### 📝 Módulo de Requisições
-- **Listar requisições** - Visualização completa com filtros
-- **Criar requisição** - Formulário em etapas por tipo de empenho
-- **Detalhes da requisição** - Visualização completa com histórico
-- **Validação administrativa** - Aprovar ou rejeitar requisições
+- **Criar requisição** - Formulário dinâmico com 4 tipos de empenho:
+  - 🔹 **Dispensa de Licitação** - Campos específicos
+  - 🔹 **Pregão Próprio** - Preenchimento automático de itens
+  - 🔹 **Adesão à Ata** - Dados de ata existente
+  - 🔹 **Contrato** - Informações contratuais
+- **Listar requisições** - Filtros avançados e busca
+- **Detalhes completos** - Visualização com histórico de aprovações
+- **Sistema de aprovação** - SALC pode aprovar/recusar com justificativa
 - **Exportar PDF** - Download de requisições
 
-**Tipos de Empenho:**
-- Empenho Ordinário
-- Empenho Global
-- Empenho Estimativo
-
 ### ✅ Módulo de Checklist
-- **Listar checklists** - Visualização com progresso
-- **Criar checklist** - Geração automática de modelos por tipo
-- **Modelos de processo** - Acesso a modelos de documentos
-- **Fundamentação legal** - Consulta de leis e normativas
+- **Criar checklist** - Geração com modelos pré-definidos
+- **Acompanhamento** - Progresso visual de cada checklist
+- **Modelos de processo** - 6 tipos de processos administrativos
+- **Fundamentação legal** - Consulta de leis e normativas (LGL, IN, LC)
+- **Anexar documentos** - Upload simulado
 
 ### 🏆 Módulo de Certidões
-- **Listar certidões** - Visualização por tipo e status
-- **Visualizar certidão** - Modal com detalhes completos
-- **Download** - Baixar certidões em PDF
-- **Alertas de validade** - Indicação de certidões próximas ao vencimento
+**8 Certidões Oficiais Implementadas:**
+1. Certidão Negativa de Débitos Federais (Receita Federal)
+2. Certidão de Regularidade do FGTS (CEF)
+3. Certidão Negativa de Débitos Trabalhistas (TST)
+4. Certidão Conjunta PGFN/RFB
+5. Certidão Municipal de Tributos
+6. Certidão Estadual de Tributos
+7. Certidão de Regularidade do INSS
+8. Certidão de Quitação Eleitoral (TSE)
 
-**Tipos de Certidões:**
-- Certidões Fiscais (Federal, Estadual, Municipal)
-- Certidões Trabalhistas (FGTS, TST)
-- Certidões Previdenciárias (INSS)
+- Consulta por CPF/CNPJ
+- Emissão simulada de certidões
+- Alertas de validade
+- Download em PDF
+
+### 👥 Gerenciamento de Usuários
+- **Listar usuários** - Visualização completa com filtros
+- **Criar/Editar** - Formulário com todos os campos
+- **Perfis e permissões** - 3 níveis de acesso
+- **Status** - Ativar/Desativar usuários
+- **Busca** - Filtrar por nome, email ou perfil
 
 ### 👤 Perfil do Usuário
-- **Dados pessoais** - Atualização de informações
+- **Dados pessoais** - Edição completa
+- **Informações militares** - Posto, unidade, função
 - **Segurança** - Alteração de senha
+- **Foto de perfil** - Upload simulado
 
-## 🎨 Design
+## 🎨 Design Institucional
 
-### Identidade Visual
-- **Cores principais:** Verde militar (#4A6741), Verde escuro (#2D4A2B), Dourado (#DAA520)
-- **Fundo:** Branco predominante
-- **Estilo:** Limpo, moderno e profissional
+### Identidade Visual Militar
+- **Verde Militar:** `#1B4D3E` - Cor principal
+- **Verde Escuro:** `#0F3A2C` - Contraste
+- **Dourado:** `#FFD700` - Destaques
+- **Branco:** Fundo predominante
+- **Cinza:** `#F3F4F6` - Backgrounds secundários
 
-### Layout
-- **Sidebar** - Navegação lateral fixa com menu colapsável em mobile
-- **Topbar** - Barra superior com perfil e notificações
-- **Responsivo** - Totalmente adaptável para desktop, tablet e mobile
+### Layout Profissional
+- ✅ Sidebar fixa com logo do Exército
+- ✅ Topbar com perfil e notificações
+- ✅ Breadcrumbs para navegação
+- ✅ Cards com sombra suave
+- ✅ Tabelas responsivas
+- ✅ Modals e dialogs consistentes
 
-## 🛠️ Tecnologias
+## 📱 100% Responsivo
 
-- **React** - Framework principal
-- **React Router** - Navegação e roteamento
-- **Tailwind CSS v4** - Estilização
-- **Lucide React** - Ícones
+- **Desktop (1920px+)** - Layout completo com sidebar fixa
+- **Laptop (1366px)** - Layout otimizado
+- **Tablet (768px)** - Sidebar colapsável
+- **Mobile (375px)** - Menu hambúrguer, design mobile-first
+
+## 🛠️ Tecnologias Utilizadas
+
+### Core
+- **React 18.3.1** - Framework principal
+- **TypeScript** - Tipagem estática
+- **Vite 6.3.5** - Build tool ultrarrápido
+- **React Router 7.13.0** - Navegação com HashRouter
+
+### UI/UX
+- **Tailwind CSS v4** - Framework CSS moderno
 - **Radix UI** - Componentes acessíveis
-- **Sonner** - Notificações toast
+- **Lucide React** - Ícones consistentes
+- **Sonner** - Notificações toast elegantes
+
+### Formulários e Validação
+- **React Hook Form 7.55.0** - Gerenciamento de forms
+- **Date-fns** - Manipulação de datas
+
+### Visualização de Dados
+- **Recharts** - Gráficos interativos
+
+### Outros
+- **Motion (Framer Motion)** - Animações suaves
+- **Canvas Confetti** - Efeitos visuais
 
 ## 📂 Estrutura do Projeto
 
 ```
-src/
-├── app/
-│   ├── components/
-│   │   ├── layout/
-│   │   │   ├── AuthLayout.tsx
-│   │   │   ├── MainLayout.tsx
-│   │   │   ├── Sidebar.tsx
-│   │   │   └── Topbar.tsx
-│   │   └── ui/
-│   ├── pages/
-│   │   ├── auth/
-│   │   │   ├── LoginPage.tsx
-│   │   │   ├── RegisterPage.tsx
-│   │   │   └── ForgotPasswordPage.tsx
-│   │   ├── dashboard/
-│   │   │   └── DashboardPage.tsx
-│   │   ├── requisicoes/
-│   │   │   ├── RequisicoesListPage.tsx
-│   │   │   ├── CriarRequisicaoPage.tsx
-│   │   │   └── DetalhesRequisicaoPage.tsx
-│   │   ├── checklist/
-│   │   │   ├── ChecklistListPage.tsx
-│   │   │   ├── CriarChecklistPage.tsx
-│   │   │   ├── ModelosProcessoPage.tsx
-│   │   │   └── FundamentacaoLegalPage.tsx
-│   │   ├── certidoes/
-│   │   │   └── CertidoesPage.tsx
-│   │   ├── perfil/
-│   │   │   └── PerfilPage.tsx
-│   │   └── NotFoundPage.tsx
-│   ├── App.tsx
-│   └── routes.tsx
-└── styles/
-    └── theme.css
+/
+├── index.html                      # Entrada HTML
+├── src/
+│   ├── main.tsx                    # Entrada React com AuthProvider
+│   ├── app/
+│   │   ├── App.tsx                 # Componente principal
+│   │   ├── routes.tsx              # Configuração de rotas (HashRouter)
+│   │   ├── components/
+│   │   │   ├── layout/
+│   │   │   │   ├── AuthLayout.tsx  # Layout de autenticação
+│   │   │   │   ├── MainLayout.tsx  # Layout principal
+│   │   │   │   ├── Sidebar.tsx     # Menu lateral
+│   │   │   │   └── Topbar.tsx      # Barra superior
+│   │   │   ├── shared/             # Componentes compartilhados
+│   │   │   └── ui/                 # Componentes UI (Radix/shadcn)
+│   │   ├── pages/
+│   │   │   ├── auth/               # Páginas de autenticação
+│   │   │   ├── dashboard/          # Dashboard principal
+│   │   │   ├── requisicoes/        # Módulo de requisições
+│   │   │   ├── checklist/          # Módulo de checklists
+│   │   │   ├── certidoes/          # Módulo de certidões
+│   │   │   ├── usuarios/           # Gerenciamento de usuários
+│   │   │   ├── perfil/             # Perfil do usuário
+│   │   │   └── NotFoundPage.tsx    # 404
+│   │   ├── context/
+│   │   │   └── AuthContext.tsx     # Contexto de autenticação
+│   │   ├── config/
+│   │   │   └── constants.ts        # Constantes do sistema
+│   │   ├── data/
+│   │   │   └── mockData.ts         # Dados mockados
+│   │   └── utils/
+│   │       └── helpers.ts          # Funções auxiliares
+│   └── styles/
+│       ├── index.css               # CSS global
+│       ├── theme.css               # Tema Tailwind
+│       ├── tailwind.css            # Config Tailwind
+│       └── fonts.css               # Fontes
+├── .github/
+│   └── workflows/
+│       └── deploy.yml              # CI/CD GitHub Actions
+├── vite.config.ts                  # Configuração Vite
+├── package.json                    # Dependências
+└── README.md                       # Este arquivo
 ```
 
-## 🚀 Como usar
+## 🚀 Como Usar Localmente
 
-1. Acesse a página de login
-2. Use credenciais de teste ou faça cadastro
-3. Navegue pelo sistema usando a sidebar
-4. Crie requisições, checklists e consulte certidões
+### Instalação
+```bash
+# Instalar dependências
+npm install
+# ou
+pnpm install
 
-## 📱 Responsividade
+# Rodar em desenvolvimento
+npm run dev
 
-O sistema é totalmente responsivo:
-- **Desktop** - Layout completo com sidebar fixa
-- **Tablet** - Layout adaptado
-- **Mobile** - Sidebar colapsável com menu hambúrguer
+# Build para produção
+npm run build
 
-## 🔒 Segurança
+# Preview da build
+npm run preview
+```
 
-- Sistema de autenticação
-- Validação de formulários
-- Níveis de permissão (usuário comum e administrador)
-- Logout seguro
+### Acesso Local
+Após rodar `npm run dev`, acesse: `http://localhost:5173`
+
+## 🔐 Credenciais de Teste
+
+- **Email:** qualquer@email.com
+- **Senha:** qualquer senha
+- **Perfil:** Administrador
 
 ## 📄 Licença
 
