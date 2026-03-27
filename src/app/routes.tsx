@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router';
+import { createHashRouter } from 'react-router';
 import { AuthLayout } from './components/layout/AuthLayout';
 import { MainLayout } from './components/layout/MainLayout';
 
@@ -22,7 +22,7 @@ import UsuariosPage from './pages/usuarios/UsuariosPage';
 import PerfilPage from './pages/perfil/PerfilPage';
 import NotFoundPage from './pages/NotFoundPage';
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   // Auth Routes
   {
     path: '/',
