@@ -2,7 +2,7 @@ name: Deploy Vite App
 
 on:
   push:
-    branches: [ "gh-pages" ] # Ou o nome da sua branch principal
+    branches: [ "main" ] # Ou o nome da sua branch principal
 
 jobs:
   build-and-deploy:
