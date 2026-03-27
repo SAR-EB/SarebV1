@@ -2,10 +2,20 @@ name: Deploy Vite App
 
 on:
   push:
-    branches: [ "main" ] # Ou o nome da sua branch principal
+    branches: [ "main", "gh-pages" ] # Gatilho para ambas as branches por segurança
+  workflow_dispatch: # Permite rodar o deploy manualmente se precisar
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
+    # Define o ambiente para o GitHub criar o link oficial do site
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
